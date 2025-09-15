@@ -1,0 +1,27 @@
+<mat-toolbar class="header-box">
+
+  <a class="logo" routerLink="/">SolCafé</a>
+
+  <span class="spacer"></span>
+
+  <button matIconButton aria-label="Ícone de casa" routerLink="/">
+    <mat-icon>home</mat-icon>
+  </button>
+
+  <button matIconButton aria-label="Ícone de café" routerLink="/menu">
+    <mat-icon>coffee</mat-icon>
+  </button>
+
+  <button matIconButton aria-label="Ícone de conta" routerLink="/userpanel">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <button matIconButton aria-label="Ícone de autenticação" routerLink="/auth">
+    <mat-icon>login</mat-icon>
+  </button>
+
+  <button matIconButton [matBadge]="cartCount" [matBadgeHidden]="hidden" aria-label="Ícone de carrinho de compras" routerLink="/checkout">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+
+</mat-toolbar>

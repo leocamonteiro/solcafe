@@ -1,0 +1,33 @@
+<div class="page-wrapper">
+
+    <div class="box">
+
+        <div class="img-box"
+        [ngStyle]="{'background-image': 'url(' + coffee.imagem + ')'}">
+
+            <button matIconButton aria-label="Ícone de adicionar ao carrinho" 
+            (click)="clickButton('add', coffee)">
+                <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+
+            <button matIconButton aria-label="Ícone de editar produto">
+                <mat-icon>edit</mat-icon>
+            </button>
+
+            <button matIconButton aria-label="Ícone de deletar produto">
+                <mat-icon>delete</mat-icon>
+            </button>
+
+        </div>
+
+        <div class="info-box">
+            <ul>
+                <li class="title">{{coffee.titulo}}</li>
+                <li class="description">"{{coffee.descricao}}"</li>
+                <li class="price">{{coffee.preco | currency:'BRL':'symbol':'1.2-2'}}</li>
+            </ul>
+        </div>
+        
+    </div>
+
+</div>

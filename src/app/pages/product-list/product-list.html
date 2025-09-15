@@ -1,0 +1,13 @@
+<div class="page-wrapper">
+
+    @if (!coffees()) {
+        <app-loading-card></app-loading-card>
+    }
+
+    @for (coffee of coffees(); track coffee.id) {
+        <div class="card">
+            <app-product-card [coffee]="coffee"></app-product-card>
+        </div>
+    }
+
+</div>

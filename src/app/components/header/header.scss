@@ -1,0 +1,43 @@
+@import 'variables';
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-box{
+  background-color: $primary-color;
+  color: $tertiary-color;
+
+  .logo{
+    all: unset;
+    font-family: "Pacifico";
+    cursor: pointer;
+    transition: 500ms;
+  }
+
+  .logo:hover{
+    transform: scale(1.2);
+    color: $secondary-color;
+  }
+
+  mat-icon{
+    color: $tertiary-color;
+    transition: 500ms;
+  }
+
+  .mat-icon:hover{
+    transform: scale(1.20);
+    color: $secondary-color;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+

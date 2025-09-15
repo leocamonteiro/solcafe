@@ -1,0 +1,16 @@
+@import 'variables';
+
+.wish-band{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.wish-band:hover{
+  transform: scale(1.05);
+  background-color: $secondary-color;
+  color: $tertiary-color;
+}

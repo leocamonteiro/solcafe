@@ -1,0 +1,13 @@
+@import 'variables';
+
+main{
+    display: flex;
+    justify-content:center;
+    align-items: top;
+    background-color: $primary-color;
+    color: $tertiary-color;
+    font-style: italic;
+    font-size: 10px;
+    font-weight: 100;
+    height: 40%;
+}

@@ -1,0 +1,21 @@
+@import 'variables';
+
+.page-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    justify-content: center;
+    
+    .card{
+        border: none;
+        border-radius: 8px;
+        transition: 500ms;
+    }
+
+    .card:hover{
+        background-color: $secondary-color;
+        cursor: pointer;
+    }
+}
