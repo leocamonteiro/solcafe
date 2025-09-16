@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { LoadingCard } from "../../components/loading-card/loading-card";
 
 @Component({
   selector: 'app-user-panel',
-  imports: [],
+  imports: [LoadingCard],
   templateUrl: './user-panel.html',
   styleUrl: './user-panel.scss'
 })

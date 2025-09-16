@@ -2,21 +2,29 @@
 
     <div class="box">
 
-        <div class="img-box"
-        [ngStyle]="{'background-image': 'url(' + coffee.imagem + ')'}">
+        <div class="img-box">
+            
+            <img 
+                class="card-img" 
+                loading="lazy"
+                [src]="imageLoaded ?  coffee.imagem : 'imgs/loading.png'"
+                (load)="onImageLoad()" 
+                alt="Imagem do café">
 
-            <button matIconButton aria-label="Ícone de adicionar ao carrinho" 
-            (click)="clickButton('add', coffee)">
-                <mat-icon>add_shopping_cart</mat-icon>
-            </button>
+            <div class="button-group">
+                <button matIconButton aria-label="Ícone de adicionar ao carrinho" 
+                (click)="clickButton('add', coffee)">
+                    <mat-icon>add_shopping_cart</mat-icon>
+                </button>
 
-            <button matIconButton aria-label="Ícone de editar produto">
-                <mat-icon>edit</mat-icon>
-            </button>
+                <button matIconButton aria-label="Ícone de editar produto">
+                    <mat-icon>edit</mat-icon>
+                </button>
 
-            <button matIconButton aria-label="Ícone de deletar produto">
-                <mat-icon>delete</mat-icon>
-            </button>
+                <button matIconButton aria-label="Ícone de deletar produto">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>  
 
         </div>
 

@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ProductCard } from '../../components/product-card/product-card';
 import { LoadingCard } from "../../components/loading-card/loading-card";
+import { Coffee } from '../../models/models';
 
 @Component({
   selector: 'app-product-list',
@@ -13,4 +14,11 @@ import { LoadingCard } from "../../components/loading-card/loading-card";
 export class ProductList {
   public productService = inject(ProductService);
   public coffees = toSignal(this.productService.getProducts())
+
+    
+  selectedCoffee: Coffee | null = null;
+
+  selectCoffee(coffee: Coffee) {
+    this.selectedCoffee = coffee;
+  }
 }

@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductCard {
   @Input() coffee!: Coffee
+  imageLoaded: boolean = false;
   private snackBar = inject(MatSnackBar);
 
   constructor(
@@ -26,5 +27,8 @@ export class ProductCard {
       this.snackBar.open("Item adicionado ao carrinho", "", {duration: 2000})
     }
   }
-  
+
+  onImageLoad(){
+    this.imageLoaded = true;
+  }
 }

@@ -1,5 +1,50 @@
 @import 'variables';
 
+.menu-band{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 30px;
+  background-color: $primary-color;
+  color: $tertiary-color;
+  height: 75px;
+
+  .button-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $tertiary-color;
+    transition: 500ms;
+    font-family: 'Playfair Display', serif;
+
+    span{
+      font-size: 12px;
+    }
+
+    mat-icon{
+      color: $tertiary-color;
+      transition: 500ms;
+    }
+  
+    .mat-icon:hover{
+      transform: scale(1.20);
+      color: $secondary-color;
+    }
+
+  }
+
+  .button-box:hover, mat-icon:hover{
+    transform: scale(1.20);
+    color: $secondary-color;
+    cursor:pointer;
+  }
+}
+
+
+
+
 .wish-band{
   display: flex;
   justify-content: center;
@@ -7,6 +52,7 @@
   padding: 5px;
   cursor: pointer;
   transition: 500ms;
+  height: 75px;
 }
 
 .wish-band:hover{
@@ -14,3 +60,4 @@
   background-color: $secondary-color;
   color: $tertiary-color;
 }
+

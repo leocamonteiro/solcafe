@@ -12,8 +12,9 @@
 
 .box{
     width: 300px;
-    background-color: white;
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $tertiary-color;
+    padding: 10px;
     border-radius: 8px;
     
     h3{
