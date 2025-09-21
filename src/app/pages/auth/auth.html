@@ -2,18 +2,10 @@
 
     <div class="box">
         <h3>Já tenho cadastro</h3>
-        <form class="form-box login-form" action="">
-                <table>
-                    <td>
-                        <tr>E-mail:</tr>
-                        <tr>Senha:</tr>
-                    </td>
-                    <td>
-                        <tr><input type="text" id=""></tr>
-                        <tr><input type="text" id=""></tr>
-                    </td>
-                </table>
-                <button>Login</button>
+        <form class="form-box login-form" (ngSubmit)="onSubmit()" [formGroup]="form">
+            <input formControlName="username" placeholder="E-mail" />
+            <input formControlName="password" type="password" placeholder="Senha" />
+            <button type="submit">Entrar</button>
         </form>
     </div>
 

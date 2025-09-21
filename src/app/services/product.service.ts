@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl: string = 'https://solcafe-api.onrender.com/'
-  // apiUrl: string = 'http://localhost:3000/'
+  // apiUrl: string = 'https://solcafe-api.onrender.com/'
+  apiUrl: string = 'http://localhost:3000/'
   
   constructor (
     private httpClient: HttpClient

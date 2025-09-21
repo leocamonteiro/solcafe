@@ -15,16 +15,17 @@
 
 * Implementar tela do carrinho ✅
 
-* Implementar botões do Admin do produto
- - Adicionar
- - Editar
- - Deletar (pop-up de confirmação)
-
-* Implementar tela de login
+* Implementar tela de login s
 
 * Implementar login/logout
   - Usuário: nome, email, senha e papel (admin ou user)
   - Só admin pode acessar tela de gerenciamento de produtos
+
+* Implementar botões do Admin do produto
+
+ - Adicionar
+ - Editar
+ - Deletar (pop-up de confirmação)
 
 * Botão toggle slide para mudar para inglês/português
 

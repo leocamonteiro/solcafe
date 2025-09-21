@@ -8,9 +8,9 @@ Implementar um projeto de Ecommerce (pode ser do tema que quiser, filmes, livros
 * Catálogo com os itens, com cada um representado como um card contendo: imagem, título, preço e descrição ✅
 * Para cada item do catálogo, devem haver três botões: adicionar ao carrinho, edição e remoção (usem ícones) ✅
 * Os botões de edição e remoção só aparecerão para alguém com papel de admin 
-* Cada item deve possuir: título/nome, descrição, data de criação, preço, quantidade no estoque, imagem ilustrativa
-* Deve haver uma página de login e uma página de cadastro, caso a pessoa não possua conta
-* Deve haver um header com navegação e um botão para fazer o login ou logout (o botão de login só aparece quando o usuário esta deslogado, e o de logout no caso contrário)
+* Cada item deve possuir: título/nome, descrição, data de criação, preço, quantidade no estoque, imagem ilustrativa ✅
+* Deve haver uma página de login ✅ e uma página de cadastro, caso a pessoa não possua conta
+* Deve haver um header com navegação ✅ e um botão para fazer o login ou logout (o botão de login só aparece quando o usuário esta deslogado, e o de logout no caso contrário)
 * Um usuário é definido por: nome, email, senha e papel no sistema (admin ou usuário comum)
 * Só o admin pode acessar QUALQUER página de cadastro, independente se é cadastro de item ou de usuário
 * Um usuário deslogado só poderá ver/acessar a página de catálogo

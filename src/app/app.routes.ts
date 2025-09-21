@@ -5,6 +5,8 @@ import { Checkout } from './pages/checkout/checkout';
 import { Auth } from './pages/auth/auth';
 import { UserPanel } from './pages/user-panel/user-panel';
 import { NotFound } from './pages/not-found/not-found';
+import { ProductManager } from './pages/product-manager/product-manager';
+import { AuthGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
     {path: '', component: Home},
@@ -12,5 +14,6 @@ export const routes: Routes = [
     {path: 'checkout', component: Checkout},
     {path: 'auth', component: Auth},
     {path: 'userpanel', component: UserPanel},
+    {path: 'product-manager', component: ProductManager, canActivate: [AuthGuard]},
     {path: '**', component: NotFound}
 ];
