@@ -13,10 +13,12 @@
 
 * Implementar tela de notFound ✅
 
+* Implementar tela do carrinho ✅
+
 * Implementar botões do Admin do produto
  - Adicionar
  - Editar
- - Deletar (popup de confirmação)
+ - Deletar (pop-up de confirmação)
 
 * Implementar tela de login
 

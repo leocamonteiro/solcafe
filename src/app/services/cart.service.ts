@@ -30,9 +30,9 @@ export class CartService {
     return this.cartCount.asReadonly();
   }
 
-  // getTotalPrice(): WritableSignal<number> {
-  //   return this.totalPrice();
-  // }
+  getTotalPrice(): Signal<number>  {
+    return this.totalPrice.asReadonly();
+  }
 
   addItemToCart(coffee: Coffee): { message: string, warning: boolean } {
     const index = this.cartItemsArray.findIndex(item => coffee.id === item.coffee.id);

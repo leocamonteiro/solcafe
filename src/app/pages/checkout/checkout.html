@@ -1,1 +1,40 @@
-<app-loading-card/>
+<div class="page-wrapper">
+
+    <div class="box">
+        <div class="items-list">
+            <h1>Carrinho:</h1>
+            @if (cartItems.length>0) {
+                <table>
+                    <tr class="table-header">
+                        <td>NOME</td>
+                        <td class="numbers">QTD</td>
+                        <td class="numbers">PREÇO</td>
+                    </tr>
+                    @for (item of cartItems; track item.coffee.id) {
+                        <tr>
+                            <td>{{item.coffee.titulo}}</td>
+                            <td class="numbers">x{{item.quantity}}</td>
+                            <td class="numbers">{{item.coffee.preco | currency: "BRL"}}</td>
+                            <td>                
+                                <button matIconButton class="remove-button" aria-label="Ícone de remover do carrinho" (click)="removeButton(item.coffee)">
+                                    <mat-icon>do_not_disturb_on</mat-icon>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                    <hr class="divider">
+                    <tr class="table-footer">
+                        <td>TOTAL</td>
+                        <td class="numbers">{{cartCount()}}</td>
+                        <td class="numbers">{{cartTotalPrice() | currency: "BRL"}}</td>
+                    </tr>                    
+                </table>
+                 <button class="checkout-button">Finalizar Pedido!</button>
+
+            }@else{
+                <p>Sem itens no carrinho.</p>
+            }
+        </div>
+    </div>
+
+</div>
