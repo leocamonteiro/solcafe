@@ -44,4 +44,18 @@ body {
   margin: 0; 
   font-family: 'Playfair Display', serif;
   background-color: $bg-color;
+
  }
+
+
+.snackbar-success .mdc-snackbar__surface {
+  background-color: #43a446 !important;
+  color: #ffffff !important;
+}
+
+.snackbar-failure .mdc-snackbar__surface {
+  background-color: #f23a2f !important;
+  color: #ffffff !important;
+}
+
+

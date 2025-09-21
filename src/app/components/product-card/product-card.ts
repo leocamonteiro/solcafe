@@ -21,11 +21,22 @@ export class ProductCard {
     private cartService: CartService
   ){}
 
+  showSnackBar(texto: string, aviso: boolean){
+    this.snackBar.open(texto, "FECHAR", {
+      duration: 1000,
+      verticalPosition: "top",
+      panelClass: [aviso ? 'snackbar-failure' : 'snackbar-success']
+    })
+  }  
+
   clickButton(command: string, coffeeItem: Coffee){
+    let result = { message: '', warning: false }
     if(command === "add"){
-      this.cartService.addItem(coffeeItem);
-      this.snackBar.open("Item adicionado ao carrinho", "", {duration: 2000})
+      result = this.cartService.addItemToCart(coffeeItem);
+    } else if (command === "remove"){
+      result = this.cartService.removeItemFromCart(coffeeItem);
     }
+    this.showSnackBar(result.message, result.warning)
   }
 
   onImageLoad(){

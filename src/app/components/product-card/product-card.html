@@ -17,13 +17,11 @@
                     <mat-icon>add_shopping_cart</mat-icon>
                 </button>
 
-                <button matIconButton aria-label="Ícone de editar produto">
-                    <mat-icon>edit</mat-icon>
+                <button matIconButton aria-label="Ícone de remover do carrinho"
+                (click)="clickButton('remove', coffee)">
+                    <mat-icon>remove_shopping_cart</mat-icon>
                 </button>
 
-                <button matIconButton aria-label="Ícone de deletar produto">
-                    <mat-icon>delete</mat-icon>
-                </button>
             </div>  
 
         </div>

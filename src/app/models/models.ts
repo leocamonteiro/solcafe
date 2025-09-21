@@ -3,7 +3,8 @@ export interface Coffee {
     titulo: string,
     descricao: string,
     preco: number,
-    imagem: string
+    imagem: string,
+    availableInStock: number
 }
 
 export interface CartItem{

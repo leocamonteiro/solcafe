@@ -17,7 +17,7 @@ Implementar um projeto de Ecommerce (pode ser do tema que quiser, filmes, livros
 * Na página de cadastro de um item, deve ser feito o upload da imagem (se quiser se desafiar, inclua o preview aqui)
 * A página de edição de um item deve ser igual à de cadastro, porém trazendo os valores atuais e um preview da imagem ilustrativa
 * Ao clicar no botão de remoção de um item, deve ser aberto um pop-up perguntando se o usuário tem certeza desta ação
-* Ao clicar no botão de adicionar ao carrinho, o item deve ser dinamicamente adicionado ao carrinho
+* Ao clicar no botão de adicionar ao carrinho, o item deve ser dinamicamente adicionado ao carrinho ✅
 * Deve haver internacionalização através da escolha da língua PT ou EN através de um botão no header
 
 
