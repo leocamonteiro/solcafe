@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000';
+  // private apiUrl = 'http://localhost:3000';
+  private  apiUrl: string = 'https://solcafe-api.onrender.com/'
 
   constructor(private http: HttpClient) {}
 
