@@ -15,15 +15,20 @@
 
 * Implementar tela do carrinho ✅
 
-* Implementar tela de login s
+* Implementar enviroment ✅
+
+* Implementar users na API ✅
+
+* Implementar tela de login ✅
 
 * Implementar login/logout
-  - Usuário: nome, email, senha e papel (admin ou user)
-  - Só admin pode acessar tela de gerenciamento de produtos
+  - Usuário: nome, email, senha e papel (admin ou user) ✅
+  - Botão login/logout no header ✅
+  - Só admin pode acessar botões de produtos ✅
 
 * Implementar botões do Admin do produto
 
- - Adicionar
+ - Adicionar (necessário implementar no product list!)
  - Editar
  - Deletar (pop-up de confirmação)
 

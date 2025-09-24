@@ -1,10 +1,11 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, Input, inject, signal, effect, computed } from '@angular/core';
 import { Coffee } from '../../models/models';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { MatIconButton } from '@angular/material/button';
 import { CartService } from '../../services/cart.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-product-card',
@@ -16,10 +17,13 @@ export class ProductCard {
   @Input() coffee!: Coffee
   imageLoaded: boolean = false;
   private snackBar = inject(MatSnackBar);
+  isAdmin = computed(() => this.authService.isAdmin());
 
   constructor(
-    private cartService: CartService
-  ){}
+    private cartService: CartService,
+    private authService: AuthService
+  ){
+  }
 
   showSnackBar(texto: string, aviso: boolean){
     this.snackBar.open(texto, "FECHAR", {

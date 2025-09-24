@@ -1,19 +1,21 @@
+import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { environment } from '../../enviroment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  // private apiUrl = 'http://localhost:3000';
-  private  apiUrl: string = 'https://solcafe-api.onrender.com/'
+  apiUrl: string = environment.apiUrl;
+  private _isAuthenticated = signal(this.hasToken()); // ✅ sinal reativo
 
   constructor(private http: HttpClient) {}
 
-  login(credentials: { username: string; password: string }) {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials);
+  login(credentials: { email: string; password: string }) {
+    return this.http.post<{ token: string }>(`${this.apiUrl}login`, credentials);
   }
 
   saveToken(token: string) {
     localStorage.setItem('jwt', token);
+    this._isAuthenticated.set(true); // ✅ atualiza o sinal
   }
 
   getToken(): string | null {
@@ -22,9 +24,32 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('jwt');
+    this._isAuthenticated.set(false); // ✅ atualiza o sinal
   }
 
-  isAuthenticated(): boolean {
-    return !!this.getToken();
+  private hasToken(): boolean {
+    return !!localStorage.getItem('jwt');
   }
+
+  isAuthenticated = this._isAuthenticated.asReadonly(); // ✅ expõe como readonly
+
+// Implementação para pegar o papel do usuário
+
+private getUserRole(): string | null {
+  const token = this.getToken();
+  if (!token) return null;
+
+  try {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload.role || null;
+  } catch (e) {
+    console.error('Erro ao decodificar o token:', e);
+    return null;
+  }
+}
+
+isAdmin(): boolean {
+  return this.getUserRole() === 'admin';
+}
+
 }

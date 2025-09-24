@@ -11,7 +11,10 @@
                 (load)="onImageLoad()" 
                 alt="Imagem do café">
 
+
             <div class="button-group">
+
+            @if (!isAdmin()) {
                 <button matIconButton aria-label="Ícone de adicionar ao carrinho" 
                 (click)="clickButton('add', coffee)">
                     <mat-icon>add_shopping_cart</mat-icon>
@@ -21,6 +24,17 @@
                 (click)="clickButton('remove', coffee)">
                     <mat-icon>do_not_disturb_on</mat-icon>
                 </button>
+            } @else {
+                <button matIconButton aria-label="Ícone de editar produto" 
+                (click)="clickButton('edit', coffee)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button matIconButton aria-label="Ícone de remover produto"
+                (click)="clickButton('rmv', coffee)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+            }
 
             </div>  
 

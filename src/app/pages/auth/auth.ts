@@ -15,7 +15,7 @@ export class Auth {
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.form = this.fb.group({
-      username: [''],
+      email: [''],
       password: ['']
     });
   }
@@ -24,7 +24,7 @@ export class Auth {
     this.auth.login(this.form.value).subscribe({
       next: res => {
         this.auth.saveToken(res.token);
-        this.router.navigate(['/product-manager']);
+        this.router.navigate(['/user-panel']);
       },
       error: err => alert('Login inválido')
     });
