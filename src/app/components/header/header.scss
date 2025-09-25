@@ -41,3 +41,12 @@
   }
 }
 
+.header-title{
+  display: flex;
+  justify-content: center;
+  font-family: "Pacifico";
+  background-color: $tertiary-color;
+  color: $primary-color;
+  font-size: 12px;
+  height: 20px;
+}

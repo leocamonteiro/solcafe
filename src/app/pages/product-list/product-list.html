@@ -13,7 +13,10 @@
 
     @for (coffee of coffees(); track coffee.id) {
         <div class="card">
-            <app-product-card [coffee]="coffee"></app-product-card>
+            <app-product-card 
+                [coffee]="coffee"
+                (productRemoved)="loadProducts()">
+            </app-product-card>
         </div>
     }
 

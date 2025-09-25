@@ -1,4 +1,4 @@
-import { Component, Input, inject, computed } from '@angular/core';
+import { Component, Input, inject, computed, Output, EventEmitter } from '@angular/core';
 import { Coffee } from '../../models/models';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
@@ -22,6 +22,7 @@ export class ProductCard {
   imageLoaded: boolean = false;
   private snackBar = inject(MatSnackBar);
   isAdmin = computed(() => this.authService.isAdmin());
+  @Output() productRemoved = new EventEmitter<number>(); // ou Coffee, se preferir
 
   constructor(
     private cartService: CartService,
@@ -70,7 +71,10 @@ export class ProductCard {
       dialogRef.afterClosed().subscribe(confirm => {
         if (confirm) {
           this.productService.removeProduct(coffeeItem.id).subscribe({
-            next: () => this.showSnackBar("Produto removido com sucesso!", false),
+            next: () => {
+              this.showSnackBar("Produto removido com sucesso!", false),
+              this.productRemoved.emit(coffeeItem.id);
+            },
             error: () => this.showSnackBar("Erro ao remover produto!", true)
           });
         }

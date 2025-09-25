@@ -34,7 +34,7 @@
  - Editar ✅
  - Deletar (pop-up de confirmação) ✅
 
-# Adicionar está dobrado, corrigir card e dar refresh na página
+# Adicionar está dobrado, corrigir card e dar refresh na página ✅
 
 * Botão toggle slide para mudar para inglês/português
 

@@ -3,7 +3,7 @@ import { Swiper } from 'swiper/types';
 
 @Component({
   selector: 'app-carousel',
-  imports: [],
+  imports: [ ],
   templateUrl: './carousel.html',
   styleUrl: './carousel.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditProductDialog } from '../../components/edit-product-dialog/edit-product-dialog';
 import { AddProductDialog } from '../../components/add-product-dialog/add-product-dialog';
 
+
 @Component({
   selector: 'app-product-list',
   imports: [ProductCard, LoadingCard, MatIcon],
@@ -54,11 +55,9 @@ export class ProductList {
 
   dialogRef.afterClosed().subscribe((newProduct: Coffee | null) => {
     if (newProduct) {
-      this.productService.addNewProduct(newProduct).subscribe({
-        next: () => this.loadProducts(), 
-        error: () => console.error('Erro ao adicionar produto')
-      });
+      this.loadProducts();
     }
   });
-  }
+ }
+
 }
