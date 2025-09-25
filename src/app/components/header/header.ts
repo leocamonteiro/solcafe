@@ -17,23 +17,27 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class Header {
   private cartService = inject(CartService);
+  private authService = inject(AuthService);
+  private snackBar = inject(MatSnackBar);
+
   hidden = true;
   cartCount = this.cartService.getCartCount();
-  isAuthenticated = signal(false); 
+  isAuthenticated = signal(false);
+  isAdmin = signal(false); // ✅ agora é um sinal reativo
 
-  constructor(
-    private authService: AuthService,
-    private snackBar: MatSnackBar
-  ) {
+  constructor() {
     effect(() => {
+      const authenticated = this.authService.isAuthenticated();
+      this.isAuthenticated.set(authenticated);
+      this.isAdmin.set(authenticated && this.authService.isAdmin()); // ✅ só define admin se estiver autenticado
       this.hidden = this.cartCount() <= 0;
-      this.isAuthenticated.set(this.authService.isAuthenticated());
     });
   }
 
   logout() {
     this.authService.logout();
     this.isAuthenticated.set(false);
+    this.isAdmin.set(false); // ✅ limpa role admin
     this.snackBar.open("Usuário deslogado", "FECHAR", {
       duration: 2000,
       verticalPosition: "top",

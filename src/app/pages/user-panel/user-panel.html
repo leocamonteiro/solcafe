@@ -1,1 +1,12 @@
-<app-loading-card/>
+<div class="page-wrapper">
+    @if (!users()) {
+        <app-loading-card></app-loading-card>
+    }
+
+    @for (user of users(); track user.id) {
+        <div class="card">
+            <app-user-card [user]="user"></app-user-card>
+        </div>
+    }
+
+</div>

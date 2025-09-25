@@ -12,13 +12,15 @@
     <mat-icon>coffee</mat-icon>
   </button>
 
-  <button matIconButton aria-label="Ícone de conta" routerLink="/userpanel">
-    <mat-icon>account_circle</mat-icon>
-  </button>
-
-  <button matIconButton [matBadge]="cartCount()" [matBadgeHidden]="hidden" aria-label="Ícone de carrinho de compras" routerLink="/checkout">
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
+  @if(isAuthenticated() && isAdmin()) {
+    <button matIconButton aria-label="Ícone de configuração de conta" routerLink="/user-panel">
+      <mat-icon>manage_accounts</mat-icon>
+    </button>
+  } @else {
+    <button matIconButton [matBadge]="cartCount()" [matBadgeHidden]="hidden" aria-label="Ícone de carrinho de compras" routerLink="/checkout">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  }
 
   @if(!isAuthenticated()){
     <button matIconButton aria-label="Ícone de login" routerLink="/auth">
@@ -27,7 +29,7 @@
   } @else{
     <button matIconButton aria-label="Ícone de logout" (click)="logout()" routerLink="/">
       <mat-icon>logout</mat-icon>
-    </button>    
+    </button>  
   }
 
 </mat-toolbar>

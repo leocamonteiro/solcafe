@@ -1,31 +1,42 @@
 <div class="page-wrapper">
 
-    <div class="box">
-        <h3>Já tenho cadastro</h3>
-        <form class="form-box login-form" (ngSubmit)="onSubmit()" [formGroup]="form">
-            <input formControlName="email" placeholder="E-mail" />
-            <input formControlName="password" type="password" placeholder="Senha" />
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
+  <div class="box">
+    <h3>Já tenho cadastro</h3>
+    <form class="form-box login-form" (ngSubmit)="onLogin()" [formGroup]="loginForm">
+      <input formControlName="email" placeholder="E-mail" />
+      @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+        <small class="error">Email inválido</small>
+      }
 
-    <div class="box">
-        <h3>Não tenho cadastro</h3>
-        <form class="form-box signup-form" action="">
-                <table>
-                    <td>
-                        <tr>Nome:</tr>
-                        <tr>E-mail:</tr>
-                        <tr>Senha:</tr>
-                    </td>
-                    <td>
-                        <tr><input type="text" id=""></tr>
-                        <tr><input type="text" id=""></tr>
-                        <tr><input type="text" id=""></tr>
-                    </td>
-                </table>
-                <button>Cadastrar</button>
-        </form>
-    </div>
+      <input formControlName="password" type="password" placeholder="Senha" />
+      @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+        <small class="error">Senha obrigatória</small>
+      }
+
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <h3>Não tenho cadastro</h3>
+    <form class="form-box signup-form" (ngSubmit)="onSignup()" [formGroup]="signupForm">
+      <input formControlName="username" placeholder="Nome de Usuário" />
+      @if (signupForm.get('username')?.invalid && signupForm.get('username')?.touched) {
+        <small class="error">Nome é obrigatório</small>
+      }
+
+      <input formControlName="email" placeholder="E-mail" />
+      @if (signupForm.get('email')?.invalid && signupForm.get('email')?.touched) {
+        <small class="error">Email inválido</small>
+      }
+
+      <input formControlName="password" type="password" placeholder="Senha" />
+      @if (signupForm.get('password')?.invalid && signupForm.get('password')?.touched) {
+        <small class="error">Senha deve conter letras e números</small>
+      }
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
 
 </div>

@@ -3,6 +3,14 @@
         <app-loading-card></app-loading-card>
     }
 
+    @if(isAdmin()){
+    <div class="card new-product" (click)="addNewProduct()">
+        <p>Adicionar Novo Produto</p>
+        <mat-icon>add_box</mat-icon>
+    </div>
+    }
+
+
     @for (coffee of coffees(); track coffee.id) {
         <div class="card">
             <app-product-card [coffee]="coffee"></app-product-card>

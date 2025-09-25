@@ -14,8 +14,30 @@
         transition: 500ms;
     }
 
+    .new-product{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 200px;
+        height: 300px;
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 30px;
+        background-color: $primary-color;
+        color: $tertiary-color;
+    }
+
+    @media (max-width: 400px) {
+     .new-product {
+         width: 250px;
+     }
+    }
+
     .card:hover{
         background-color: $secondary-color;
         cursor: pointer;
     }
 }
+

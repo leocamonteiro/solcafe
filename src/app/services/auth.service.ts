@@ -1,11 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../enviroment';
+import { User } from '../models/users';
+import { Observable, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   apiUrl: string = environment.apiUrl;
-  private _isAuthenticated = signal(this.hasToken()); // ✅ sinal reativo
+  users: User[] = []
+  private _isAuthenticated = signal(this.hasToken()); 
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +18,7 @@ export class AuthService {
 
   saveToken(token: string) {
     localStorage.setItem('jwt', token);
-    this._isAuthenticated.set(true); // ✅ atualiza o sinal
+    this._isAuthenticated.set(true); 
   }
 
   getToken(): string | null {
@@ -31,7 +34,19 @@ export class AuthService {
     return !!localStorage.getItem('jwt');
   }
 
-  isAuthenticated = this._isAuthenticated.asReadonly(); // ✅ expõe como readonly
+  isAuthenticated = this._isAuthenticated.asReadonly();
+
+  getUsers(): Observable<User[]> {
+    const token = this.getToken();
+    const headers = { Authorization: `Bearer ${token}` };
+    return this.http.get<User[]>(`${this.apiUrl}users`, { headers });
+  }
+
+  signup(userData: { username: string; email: string; password: string; role: string }) {
+    const token = this.getToken();
+    const headers = { Authorization: `Bearer ${token}` };
+    return this.http.post(`${this.apiUrl}users`, userData, { headers });
+  }
 
 // Implementação para pegar o papel do usuário
 

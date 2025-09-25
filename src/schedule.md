@@ -4,7 +4,7 @@
 
 * Alterar para card preencher a tela quando tela menor ✅
 
-* Implementar estoque de produtos
+* Implementar estoque de produtos ✅
   - Model ✅
   - Database ✅
   - Implementar no addItem() ✅
@@ -21,16 +21,20 @@
 
 * Implementar tela de login ✅
 
-* Implementar login/logout
+* Implementar login/logout ✅
   - Usuário: nome, email, senha e papel (admin ou user) ✅
   - Botão login/logout no header ✅
   - Só admin pode acessar botões de produtos ✅
 
-* Implementar botões do Admin do produto
+* Implementar cadastro de usuário ✅
 
- - Adicionar (necessário implementar no product list!)
- - Editar
- - Deletar (pop-up de confirmação)
+* Implementar botões do Admin do produto ✅
+
+ - Adicionar (necessário implementar no product list!) ✅
+ - Editar ✅
+ - Deletar (pop-up de confirmação) ✅
+
+# Adicionar está dobrado, corrigir card e dar refresh na página
 
 * Botão toggle slide para mudar para inglês/português
 
