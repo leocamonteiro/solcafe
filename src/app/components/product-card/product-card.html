@@ -7,7 +7,7 @@
             <img 
                 class="card-img" 
                 loading="lazy"
-                [src]="coffee.imagem || 'imgs/loading.png'"
+                [src]="coffee.imagem ? coffee.imagem : 'imgs/loading.png'" 
                 (load)="onImageLoad()" 
                 alt="Imagem do café">
 

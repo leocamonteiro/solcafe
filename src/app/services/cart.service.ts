@@ -78,7 +78,6 @@ export class CartService {
       }
     }
 
-    console.log(this.cartItemsArray)
     this.updateCart();
     localStorage.setItem("cartArray", JSON.stringify(this.cartItemsArray));
     return {
@@ -86,5 +85,11 @@ export class CartService {
       warning: true
     }
       
+  }
+
+  clearCart(): void {
+    this.cartItemsArray = [];
+    localStorage.setItem("cartArray", JSON.stringify([])); // sobrescreve com array vazio
+    this.updateCart();
   }
 }

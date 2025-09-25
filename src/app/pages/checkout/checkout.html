@@ -29,7 +29,7 @@
                         <td class="numbers">{{cartTotalPrice() | currency: "BRL"}}</td>
                     </tr>                    
                 </table>
-                 <button class="checkout-button">Finalizar Pedido!</button>
+                 <button class="checkout-button" (click)="finalizarPedido()">Finalizar Pedido!</button>
 
             }@else{
                 <p>Sem itens no carrinho.</p>
